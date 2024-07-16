@@ -67,14 +67,14 @@ EOT
     invite_only = false
 
     [api.smtp]
-    host = "${REVOLT_SMTP_HOST}"
-    username = "${REVOLT_SMTP_USERNAME}"
-    password = "${REVOLT_SMTP_PASSWORD}"
-    from_address = "${REVOLT_SMTP_FROM}"
+    host = "tuesday.mxrouting.net"
+    username = "${SMTP_LOGIN}"
+    password = "${SMTP_PASSWORD}"
+    from_address = "Revolt <${SMTP_LOGIN}>"
 
     [api.vapid]
-    private_key = "${REVOLT_VAPID_PRIVATE_KEY}"
-    public_key = "${REVOLT_VAPID_PUBLIC_KEY}"
+    private_key = "${PRIVATE_KEY}"
+    public_key = "${PUBLIC_KEY}"
 
     [api.fcm]
     api_key = ""

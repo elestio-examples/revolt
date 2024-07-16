@@ -44,7 +44,8 @@ else
     REVOLT_SMTP_FROM="Revolt <${SMTP_LOGIN}>"
     REVOLT_VAPID_PRIVATE_KEY=${PRIVATE_KEY}
     REVOLT_VAPID_PUBLIC_KEY=${PUBLIC_KEY}
-    EOT
+    
+EOT
 
     cat << EOT >> ./Revolt.toml
     [database]
@@ -144,6 +145,6 @@ else
     [sentry]
     api = ""
     events = ""
-    EOT
+EOT
     touch "./initialization"
 fi

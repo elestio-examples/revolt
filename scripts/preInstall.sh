@@ -71,6 +71,8 @@ EOT
     username = "${SMTP_LOGIN}"
     password = "${SMTP_PASSWORD}"
     from_address = "Revolt <${SMTP_LOGIN}>"
+    port = 465
+    use_tls = true
 
     [api.vapid]
     private_key = "${PRIVATE_KEY}"
@@ -145,6 +147,29 @@ EOT
     [sentry]
     api = ""
     events = ""
+    [files]
+    # Encryption key for stored files
+    # Generate your own key using `openssl rand -base64 32`
+    encryption_key = "qcuMA+ssxhMyKaNAKBGFfryfFtUH8NDlamQyDwGW6fU="
+    # Quality used for lossy WebP previews (set to 100 for lossless)
+    webp_quality = 80.0
+
+    [files.limit]
+    # Minimum image resolution
+    min_resolution = [1, 1]
+    # Maximum MP of images
+    max_mega_pixels = 40
+    # Maximum pixel side of an image
+    max_pixel_side = 10_000
+
+    [files.preview]
+    # Maximum image resolution
+    attachments = [1280, 1280]
+    avatars = [128, 128]
+    backgrounds = [1280, 720]
+    icons = [128, 128]
+    banners = [480, 480]
+    emojis = [128, 128]
 EOT
     touch "./initialization"
 fi
